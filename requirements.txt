@@ -1,5 +1,6 @@
+gradio
 streamlit
-pandas
-xgboost
-scikit-learn
 joblib
+pandas
+scikit-learn
+numpy
