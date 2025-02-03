@@ -3,8 +3,7 @@ import joblib
 import numpy as np
 
 # Load the trained model
-with open("model.pkl", "rb") as f:
-    model = joblib.load(f)
+model = joblib.load("xgb_model.joblib")
 
 # Streamlit UI
 st.title("Fraud Detection for Credit Card")
