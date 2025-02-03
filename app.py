@@ -34,5 +34,5 @@ user_input = get_user_input()
 
 if st.button("Predict"):
     prediction = model.predict(user_input)
-    result = "Fraud Transaction" if prediction[0] == 1 else "Non-FraudTransaction"
+    result = "Fraud Transaction" if prediction[0] == 1 else "Non-Fraud Transaction"
     st.write("### Prediction:", result)
