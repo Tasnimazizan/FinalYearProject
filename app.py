@@ -11,16 +11,17 @@ model = joblib.load("xgb_model.pkl")
 
 # User input fields
 def get_user_input():
+    cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
     amount_log = st.number_input("Log Amount", min_value=0.0, format="%f")
     category = st.number_input("Category", min_value=0, format="%d")
     hour = st.number_input("Hour of Transaction", min_value=0, max_value=23, format="%d")
     merchant = st.number_input("Merchant ID", min_value=0, format="%d")
     unix_time = st.number_input("Unix Time", min_value=0, format="%d")
-    lat = st.number_input("Latitude", format="%f")
-    long = st.number_input("Longitude", format="%f")
-    dayofweek = st.number_input("Day of Week", min_value=0, max_value=6, format="%d")
-    month = st.number_input("Month", min_value=1, max_value=12, format="%d")
-    cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
+    lat = st.number_input("Latitude", format="%f", help="Enter latitude for the transaction location")
+    long = st.number_input("Longitude", format="%f", help="Enter longitude for the transaction location")
+    dayofweek = st.selectbox("Day of Week", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
+    month = st.selectbox("Month", ["January", "February", "March", "April", "May", "June", "July", "August", 
+                                  "September", "October", "November", "December"])
     city = st.number_input("City", min_value=0, format="%d")
     state = st.number_input("State", min_value=0, format="%d")
     merch_long = st.number_input("Merchant Longitude", format="%f")
