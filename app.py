@@ -7,7 +7,7 @@ st.title("Fraud Detection for Credit Card")
 st.write("Enter transaction details to predict fraud.")
 
 # Load the trained model
-model = joblib.load("xgb_model.joblib")
+model = joblib.load("xgb_model.pkl")
 
 # User input fields
 def get_user_input():
