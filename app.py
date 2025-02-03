@@ -53,23 +53,6 @@ def get_user_input():
 # Get user input
 user_input = get_user_input()
 
-# Show the collected inputs
-st.write("### You entered:")
-st.write(f"Transaction Amount: {user_input[0][0]}")
-st.write(f"Category: {user_input[0][1]}")
-st.write(f"Hour: {user_input[0][2]}")
-st.write(f"Merchant: {user_input[0][3]}")
-st.write(f"Unix Time: {user_input[0][4]}")
-st.write(f"Latitude: {user_input[0][5]}")
-st.write(f"Longitude: {user_input[0][6]}")
-st.write(f"Day of Week: {user_input[0][7]}")
-st.write(f"Month: {user_input[0][8]}")
-st.write(f"Credit Card Number: {user_input[0][9]}")
-st.write(f"City: {user_input[0][10]}")
-st.write(f"State: {user_input[0][11]}")
-st.write(f"Merchant Latitude: {user_input[0][12]}")
-st.write(f"Merchant Longitude: {user_input[0][13]}")
-
 # Prediction button
 if st.button("Predict"):
     prediction = model.predict(user_input)
