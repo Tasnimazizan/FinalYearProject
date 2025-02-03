@@ -2,12 +2,12 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Load the trained model
-model = joblib.load("xgb_model.joblib")
-
 # Streamlit UI
 st.title("Fraud Detection for Credit Card")
 st.write("Enter transaction details to predict fraud.")
+
+# Load the trained model
+model = joblib.load("xgb_model.joblib")
 
 # User input fields
 def get_user_input():
