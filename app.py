@@ -32,7 +32,7 @@ def get_user_input():
 # Get user input
 user_input = get_user_input()
 
-if st.button("Predict Fraud"):
+if st.button("Predict"):
     prediction = model.predict(user_input)
-    result = "Fraudulent Transaction" if prediction[0] == 1 else "Legitimate Transaction"
+    result = "Fraud Transaction" if prediction[0] == 1 else "Non-FraudTransaction"
     st.write("### Prediction:", result)
