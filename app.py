@@ -11,7 +11,6 @@ model = joblib.load("xgb_model.pkl")
 
 # User input fields
 def get_user_input():
-    cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
     amount_log = st.number_input("Log Amount", min_value=0.0, format="%f")
     category = st.number_input("Category", min_value=0, format="%d")
     hour = st.number_input("Hour of Transaction", min_value=0, max_value=23, format="%d")
@@ -19,15 +18,16 @@ def get_user_input():
     unix_time = st.number_input("Unix Time", min_value=0, format="%d")
     lat = st.number_input("Latitude", format="%f")
     long = st.number_input("Longitude", format="%f")
-    dayofweek = st.number_input("Day of Week", min_value=1, max_value=7, format="%d")
+    dayofweek = st.number_input("Day of Week", min_value=0, max_value=6, format="%d")
     month = st.number_input("Month", min_value=1, max_value=12, format="%d")
+    cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
     city = st.number_input("City", min_value=0, format="%d")
     state = st.number_input("State", min_value=0, format="%d")
     merch_long = st.number_input("Merchant Longitude", format="%f")
     merch_lat = st.number_input("Merchant Latitude", format="%f")
     
-    return np.array([[cc_num, amount_log, category, hour, merchant, unix_time, lat, dayofweek, 
-                      month, long, city, state, merch_long, merch_lat]])
+    return np.array([[amount_log, category, hour, merchant, unix_time, lat, dayofweek, 
+                      month, long, cc_num, city, state, merch_long, merch_lat]])
 
 # Get user input
 user_input = get_user_input()
