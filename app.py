@@ -14,7 +14,6 @@ def get_user_input():
     amount_log = st.number_input("Log Amount", min_value=0.0, format="%f")
     category = st.number_input("Category", min_value=0, format="%d")
     hour = st.number_input("Hour of Transaction (24-hour format)", min_value=0, max_value=23, format="%d")
-    merchant = st.number_input("Merchant ID", min_value=0, format="%d")
     unix_time = st.number_input("Unix Time", min_value=0, format="%d")
     lat = st.number_input("Latitude", format="%f")
     long = st.number_input("Longitude", format="%f")
@@ -26,7 +25,7 @@ def get_user_input():
     merch_long = st.number_input("Merchant Longitude", format="%f")
     merch_lat = st.number_input("Merchant Latitude", format="%f")
     
-    return np.array([[amount_log, category, hour, merchant, unix_time, lat, dayofweek, 
+    return np.array([[amount_log, category, hour, unix_time, lat, dayofweek, 
                       month, long, cc_num, city, state, merch_long, merch_lat]])
 
 # Get user input
