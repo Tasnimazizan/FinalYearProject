@@ -17,7 +17,7 @@ def get_user_input():
     unix_time = st.number_input("Unix Time", min_value=0, format="%d")
     lat = st.number_input("Latitude", format="%f")
     long = st.number_input("Longitude", format="%f")
-    dayofweek = st.number_input("Day of Week (Sunday-1, Monday-2, Tuesday-3 and so on)", min_value=1, max_value=7, format="%d")
+    dayofweek = st.number_input("Day of Week", min_value=1, max_value=7, format="%d")
     month = st.number_input("Month", min_value=1, max_value=12, format="%d")
     cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
     city = st.number_input("City", min_value=0, format="%d")
