@@ -21,14 +21,13 @@ def get_user_input():
     long = st.number_input("Longitude", format="%f")
     dayofweek = st.number_input("Day of Week", min_value=1, max_value=7, format="%d")
     month = st.number_input("Month", min_value=1, max_value=12, format="%d")
-    cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
     city = st.number_input("City", min_value=0, format="%d")
     state = st.number_input("State", min_value=0, format="%d")
     merch_long = st.number_input("Merchant Longitude", format="%f")
     merch_lat = st.number_input("Merchant Latitude", format="%f")
     
-    return np.array([[amount_log, category, hour, merchant, unix_time, lat, dayofweek, 
-                      month, long, cc_num, city, state, merch_long, merch_lat]])
+    return np.array([[cc_num, amount_log, category, hour, merchant, unix_time, lat, dayofweek, 
+                      month, long, city, state, merch_long, merch_lat]])
 
 # Get user input
 user_input = get_user_input()
