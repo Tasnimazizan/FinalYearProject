@@ -41,11 +41,6 @@ with col2:
     city = st.number_input("City ID", min_value=0, format="%d")
     state = st.number_input("State ID", min_value=0, format="%d")
 
-# Advanced options in expander
-with st.expander("🔧 Advanced Options"):
-    st.write("These fields are optional and for detailed analysis.")
-    extra_feature = st.number_input("Extra Feature", min_value=0, format="%d")
-
 # Prepare user input
 user_input = np.array([[amount_log, category, hour, unix_time, merchant, lat, 
                         dayofweek, month, long, cc_num, city, state, merch_long, merch_lat]])
