@@ -18,7 +18,7 @@ st.write("Enter transaction details below to predict fraud.")
 
 # User inputs for essential features
 st.subheader("Transaction Details")
-amount_log = st.number_input("Transaction Amount (Log Scale)", min_value=0.0, format="%f")
+amount_log = st.number_input("Transaction Amount ", min_value=0.0, format="%f")
 hour = st.slider("Hour of Transaction", 0, 23, 12)
 dayofweek = st.selectbox("Day of Week", list(range(1, 8)), format_func=lambda x: f"Day {x}")
 month = st.selectbox("Month", list(range(1, 13)), format_func=lambda x: f"Month {x}")
