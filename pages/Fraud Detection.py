@@ -14,7 +14,7 @@ model = load_model()
 # Streamlit UI
 st.set_page_config(page_title="Fraud Detection Dashboard", layout="wide")
 st.title("🚀 Fraud Detection for Credit Card Transactions")
-st.write("Enter transaction details below to predict potential fraud.")
+st.write("Enter transaction details below to predict fraud.")
 
 # Layout using columns
 col1, col2 = st.columns(2)
