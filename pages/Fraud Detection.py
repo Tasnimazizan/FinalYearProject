@@ -14,7 +14,7 @@ model = load_model()
 # Streamlit UI
 st.set_page_config(page_title="Fraud Detection Dashboard", layout="wide")
 st.title("🚀 Fraud Detection for Credit Card Transactions")
-st.write("Enter transaction details below to predict fraud.")
+st.write("Enter transaction details below to predict potential fraud.")
 
 # Layout using columns
 col1, col2 = st.columns(2)
@@ -40,6 +40,11 @@ with col2:
     cc_num = st.number_input("Credit Card Number", min_value=0, format="%d")
     city = st.number_input("City ID", min_value=0, format="%d")
     state = st.number_input("State ID", min_value=0, format="%d")
+
+# Advanced options in expander
+with st.expander("🔧 Advanced Options"):
+    st.write("These fields are optional and for detailed analysis.")
+    extra_feature = st.number_input("Extra Feature", min_value=0, format="%d")
 
 # Prepare user input
 user_input = np.array([[amount_log, category, hour, unix_time, merchant, lat, 
@@ -73,4 +78,3 @@ if st.button("🔍 Predict Fraud"):
     ax.set_xlabel("Importance Score")
     ax.set_title("Feature Importance")
     st.pyplot(fig)
-
